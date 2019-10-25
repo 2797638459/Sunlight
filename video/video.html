@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在线视频</title>
+<link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--布局样式，意义不大-->
+<link rel="stylesheet" href="css/video.csss">
+
+<!--核心样式-->
+<link rel="stylesheet" href="dist/css/ckin.css">
+<style type="text/css">
+	.cebian{
+		z-index: 10;
+		position:fixed;
+		float: left;
+		width: 100px;
+		left: 10px;
+		top: 70%;
+	}
+	.btn{
+		float: left;
+	}
+</style>
+</head>
+<body>
+
+<section class="demo-section demo-section--light" id="demo">
+	<div class="container"id="top">
+		<h2 class="title heading">在线视频</h2>
+		
+		
+		<video poster="ckin.jpg" src="ckin.mp4" data-ckin="default" data-overlay="1" data-title="The curious case of Chameleon..."></video>
+		
+		
+		
+		
+	</div>
+</section>
+
+<section class="demo-section demo-section--light" id="skins">
+	<div class="container">
+		<h2 class="title heading">更多视频</h2>
+		<ul class="demo-list">
+			<li class="demo-list__item">
+				<p>Default Ckin without overlay</p>
+				<video poster="ckin.jpg" src="ckin.mp4" data-ckin="default"></video>
+			</li>
+			<li class="demo-list__item">
+				<p>Minimal Ckin with overlay</p>
+				<video poster="ckin.jpg" src="ckin.mp4" data-ckin="minimal" data-overlay="1"></video>
+			</li>
+			<li class="demo-list__item">
+				<p>Compact Ckin with overlay</p>
+				<video poster="ckin.jpg" src="ckin.mp4" data-ckin="compact" data-overlay="2"></video>
+			</li>
+			<li class="demo-list__item">
+				<p>Compact Ckin with custom color</p>
+				<video poster="ckin.jpg" src="ckin.mp4" data-color="#fff000" data-ckin="compact" data-overlay="2"></video>
+			</li>
+			<li class="demo-list__item">
+				<h2 class="coming-soon">大数据1702-孙顺</h2>
+			</li>
+		</ul>
+	</div>
+</section>
+<div class="cebian">
+	<a href="../index.html" class="btn btn-primary">返回首页</a>
+	<a href="#top" class="btn btn-danger">返回顶部</a>
+</div>
+
+<script src="../lib/bootstrap/otherJs/jquery.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="dist/js/ckin.js"></script>
+</body>
+</html>
