@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>One Piece</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+      <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ 
+      <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="lib/bootstrap/otherJs/html5shiv.js"></script>
+         <script src="lib/bootstrap/otherJs/respond.min.js"></script>
+      <![endif]-->
+      <style type="text/css">
+      	body{
+      		cursor: pointer;
+      	
+			background: yellowgreen;
+      	}
+      	#carousel-example-generic .item img {
+			width: 100%;
+			height: 400px;
+		}
+
+		.navbar {
+			margin-bottom: 0px;
+		}
+		.well p{
+			text-indent: 2em;
+		}
+		
+		#musicPlayer{
+			width: 100%;
+		}
+		#musicImg{
+			width: 150px;
+			height: 150px;
+			margin: auto;
+			animation:imgRotate 8s linear infinite;  /*无限循环*/
+			animation-play-state: paused;
+		}
+		/*旋转关键帧动画*/
+		@keyframes imgRotate{
+			from { transform: rotate(0deg);}
+			to{transform: rotate(360deg);}
+		}
+		.cebian{
+		z-index: 10;
+		position:fixed;
+		float: left;
+		width: 100px;
+		left: 10px;
+		top: 70%;
+	}
+	.btn{
+		float: left;
+	}
+		 </style>
+   </head>
+   <body>
+ 
+   	<!--导航栏-->
+   	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- logo -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../index.html">Sunlight</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">首页 <span class="sr-only">(current)</span></a></li>
+        <li><a href="Latest information.html">最新情报</a></li>
+         <li><a href="introduce.html">角色介绍</a></li>
+          <li><a href="information.html">动画音乐</a></li>
+           <li><a href="activity.html">最新活动</a></li>
+            <li><a href="Contact.html">联系我们</a></li>
+      </ul>
+   <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../regs.html">登录</a></li>
+            <li><a href="../logs.html">注册</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">简体中文</a></li>
+            <li><a href="#">日本語</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--轮播图-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img  src="file/img/11.jpg" alt="...">
+      <div class="carousel-caption">
+
+      </div>
+    </div>
+    <div class="item">
+      <img src="file/img/12.jpg" alt="...">
+      <div class="carousel-caption">
+       
+      </div>
+    </div>
+   <div class="item">
+      <img src="file/img/13.jpg" alt="...">
+      <div class="carousel-caption">
+      
+      </div>
+    </div>
+      <div class="item">
+      <img src="file/img/14.jpg" alt="...">
+      <div class="carousel-caption">
+     
+      </div>
+    </div>
+      <div class="item">
+      <img src="file/img/15.jpg" alt="...">
+      <div class="carousel-caption">
+     
+      </div>
+    </div>
+      <div class="item">
+      <img src="file/img/16.jpg" alt="...">
+      <div class="carousel-caption">
+    
+      </div>
+    </div>
+      <div class="item">
+      <img src="file/img/17.jpg" alt="...">
+      <div class="carousel-caption">
+  
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div class="container">
+	<!--内容介绍-->
+	<div class="page-header">
+  <h1>故事 <small>概要</small></h1>
+</div>
+	<!--内容-->
+	<div class="well">
+		 <p> 路飞所生长的小村庄里曾经是一群以“红发香克斯”为首的海盗们的暂居地，而小小的路飞一直希望自己可以成为他们的一员，可惜，在一次非常意外的情况下，他吃了一种叫做“橡皮果实”的恶魔果实而变成了橡皮人，恶魔果实给予了他奇特的本领，但是吃了恶魔果实的人是再也无法学会游泳的……</p> 
+　<p>“没有关系，我只要不掉到海里去就行了……”天性乐观单纯的路飞并没有放弃他的海盗之路，他和香克斯约好，总有一天他会集齐伙伴，成为海贼王。</p> 
+　<p>怀揣着对这个世界的憧憬和对自己梦想的执著，路飞长大以后摇着条小船就出海了，这一路上还真让他找到了许多身怀绝技的朋友：目标成为第一剑客的索隆，有着非常优秀的航海直觉的娜美，一流的海上厨师香吉士，特别善于说大话的乌索普，一流的船医驯鹿乔巴，成熟富有女人味的考古学家罗宾，以及顶级的船匠弗兰克，和立志与鲸鱼拉布重逢的骷髅音乐家布鲁克。当然要得到这些伙伴是非常不容易的，路飞一路千辛万苦地和他所遇到的敌人们战斗着，他最大的长处就是那笑对死亡和永不言败的精神！</p> 
+　<p>伟大航路！这是一个任凭再优秀的海盗也无法预料其危险的地方，这是一个埋葬了无数的厉害人物的地方，这是一个摧毁人类一切常识信心和勇气的地方……可是路飞他们终于进入了，One Piece的故事将要完全展开了。</p> 
+	</div>
+</div>
+<!--人物介绍-->
+<div class="container">
+	<div class="page-header">
+  <h1> 海贼船介绍</h1>
+</div>
+	<!--内容-->
+	<h3 style="text-indent: 2em;"> 黄金梅利号</h3>
+<div class="alert alert-success" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/黄金梅利号.jpg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			黄金梅丽号是草帽一伙第一艘海贼船，是一艘骨架结构、三角帆船。在乌索普家乡西罗布村由可雅送给草帽一伙。陪伴着路飞他们经历了一次又一次的冒险。在司法岛篇完成了她最终的使命。
+		</div>
+	</div>
+</div>
+<h3 style="text-indent: 2em;"> 恐怖三桅帆船</h3>
+<div class="alert alert-info" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/恐怖三桅帆船.jpg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			矗立在魔幻三角地带的巨大岛屿，其实是一艘巨大的帆船，是原七武海月光·莫利亚的海贼船，也是世界上最大的海贼船。在每年有100艘海贼船在这里失踪，其实都是被莫利亚所捕捉。船四周有浓浓的迷雾，是非常恐怖的所在。
+		</div>
+	</div>
+</div>
+<h3 style="text-indent: 2em;"> 九蛇海贼团</h3>
+<div class="alert alert-warning" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/九蛇海贼团：九蛇号.jpg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			九蛇海贼团全员都是女性的海贼团，船员是九蛇族精挑细选的战士，团长为女帝波雅·汉库克。整条船由两条巨大的游蛇拖行前进，可自由出入无风带。女帝波雅·汉库克是王下七武海海，所以九蛇海贼团的抢劫行为海军不会过问。
+		</div>
+	</div>
+</div>
+<h3 style="text-indent: 2em;"> 约塔玛利亚大船团：约塔玛利亚号</h3>
+<div class="alert alert-danger" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/约塔玛利亚大船团：约塔玛利亚号.jpeg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			约塔玛利亚号是约塔玛利亚大船团的主船，船头是希腊女神的黄金雕像，船身巨大，比巨人族还要高数十倍多。奥隆布斯是约塔玛利亚大船团提督，现已加入草帽大船团。
+		</div>
+	</div>
+</div>
+<h3 style="text-indent: 2em;"> 红发海贼团：雷德·佛斯号</h3>
+<div class="alert alert-success" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/红发海贼团：雷德·佛斯号.jpeg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			君临伟大航路后半段“新世界”四皇之一红发海贼团的海贼船。最初的雷德·佛斯号是一艘单桅杆的船体，现被改造成双桅杆船体。速度比起以前有了很大的提升，顶上战争时，前一天还在新世界阻挡百兽凯多，后一天就到了海军本部马林梵多。
+		</div>
+	</div>
+</div>
+<h3 style="text-indent: 2em;"> 白胡子海贼团：莫比迪克号</h3>
+<div class="alert alert-warning" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/白胡子海贼团：莫比迪克号.jpeg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			莫比迪克号是四皇白胡子海贼团的主船，船头为鲸鱼头部装饰。白胡子与莫比迪克号创造了一个时代，在顶上战争时，白胡子身死，莫比迪克号也被赤犬所毁
+		</div>
+	</div>
+</div>
+<h3 style="text-indent: 2em;"> 罗杰海贼团：奥罗·杰克逊号</h3>
+<div class="alert alert-danger" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/罗杰海贼团：奥罗·杰克逊号.jpeg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			海贼王罗杰的海贼船，是由宝树“亚当”所打造的传奇海贼船，船的帆为醒目红色，也代表了罗杰海贼团，这艘船与罗杰海贼团航行在伟大航路上，最终达到了拉夫德鲁，见证了海贼王的诞生
+		</div>
+	</div>
+</div>
+<h3 style="text-indent: 2em;"> 前进路飞前辈号</h3>
+<div class="alert alert-danger" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/路飞前辈号.jpg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			前进路飞前辈号 [1]  是海贼食人鬼巴托洛米奥的海贼船！巴托洛米奥海贼团是由船长巴托尔·罗密奥所率领，其自从在罗格镇上看见路飞得救的奇迹后，迷上了路飞以及路飞一伙人，所以开始组建海贼团出海。全团成员都是一个德行，疯狂迷恋草帽一伙！船长更是头号粉丝，巴托尔·罗密奥是一年前出现在新世界的疯狂新人，斗牛竞技场B区胜者，“最希望消失的海贼实时排行榜”NO.1。对待他人狂傲嚣张，但在面对草帽一伙时会露出可爱的脑残粉一面。受草帽一伙的影响，巴托也非常重情义</div>
+	</div>
+</div>
+<div class="alert alert-danger" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/罗杰海贼团：奥罗·杰克逊号.jpeg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			海贼王罗杰的海贼船，是由宝树“亚当”所打造的传奇海贼船，船的帆为醒目红色，也代表了罗杰海贼团，这艘船与罗杰海贼团航行在伟大航路上，最终达到了拉夫德鲁，见证了海贼王的诞生
+		</div>
+	</div>
+</div>
+<h3 style="text-indent: 2em;"> 草帽海贼团：万里阳光号</h3>
+<div class="alert alert-danger" role="alert">
+	<div class="row">
+		<div class=" col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<img class="img-responsive" src="file/img/草帽海贼团：万里阳光号（桑尼号）.jpg"/>
+		</div>
+		<div class="col-xs-12 col-lg-8 col-md-8 col-sm-8">
+			草帽一伙第二艘海贼船，是继承梅丽号意志的船。由弗兰奇设计，是由宝树“亚当”为材料，水之都船工合力建造。船头是雄伟的狮子，可通过旋转狮子鬃毛使船只后退，狮子嘴可发射狮吼炮。整艘船设备齐全，各种设施应有尽有。是非常适合航行的船。
+		</div>
+	</div>
+</div>
+</div>
+<!--音乐播放-->
+<div class="container">
+	<!--标题-->
+	<div class="page-header">
+	<h1>音乐播放 <small>插曲</small> </h1>	
+	</div>
+	<!--内容-->
+	<div class="row">
+		<div class="col-xs-12 col-lg-3 col-md-3">
+			<audio id="musicPlayer" src="file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" controls="controls"></audio>
+			<div class="alert alert-danger" role="alert">
+				<img id="musicImg" class="img-circle img-responsive" src="file/img/2.jpg"/>
+			</div>
+		</div>
+		<div class="col-xs-12 col-lg-9 col-md-9">
+			<table class="table table-striped">
+			  <thead>
+			  	<tr>
+			  		<th>歌曲名</th>
+			  		<th>演唱人</th>
+			  		<th>类型</th>
+			  		<th>播放</th>
+			  	</tr>
+			  </thead>
+			  <thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle" ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>白痴歌 </td>
+			  		<td>田中真弓 </td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/田中真弓 - 白痴歌.mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>中井和哉,大谷育江,岡村明美 - ウィーアー! ~7人の麦わら海贼団篇~</td>
+			  		<td>中井和哉,大谷育江,岡村明美 </td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/田中真弓,中井和哉,岡村明美 - A THOUSAND DREAMERS ~9人の麦わら海贼団篇~ (BONUS TRACK).mp3" class="glyphicon glyphicon-play-circle" ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/5.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="cebian">
+	<a href="../index.html" class="btn btn-primary">返回主站</a>
+	<a href="#top" class="btn btn-danger">返回顶部</a>
+</div>
+      <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="lib/bootstrap/otherJs/jquery.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+      	<!--js-->
+	<script>
+		$(function(){
+			$("#musicPlayer").on("play",function(){
+				//播放 转动
+			$("#musicImg").css("animation-play-state","running")
+			});
+				$("#musicPlayer").on("pause",function(){
+				//暂停
+				$("#musicImg").css("animation-play-state","paused")
+			});
+			//切歌
+			$(".glyphicon-play-circle").on("click",function(){
+				//获取音乐
+//				console.log($(this))
+				var music = $(this).data("music");
+				var img = $(this).data("img");
+				console.log(music,img)
+				$("#musicPlayer").prop("src",music);
+				$("#musicImg").prop("src",img);
+				//自动播放
+				$("#musicImg").css("animation-play-state","running");
+				$("#musicPlayer")[0].play()
+			})
+		})
+	</script>
+   </body>
+</html>
