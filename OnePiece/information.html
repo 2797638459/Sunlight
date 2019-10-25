@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   	 <meta charset="utf-8" />
+      <title>原创/动画信息</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+      <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ 
+      <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="lib/bootstrap/otherJs/html5shiv.js"></script>
+         <script src="lib/bootstrap/otherJs/respond.min.js"></script>
+      <![endif]-->
+      <style type="text/css">
+      	body{
+      		background: yellowgreen;
+      	}
+		     .row{
+		      	height: 580px;
+		      }
+  			.left-box{
+  				/*background: red;*/
+  				height: 100%;
+  			}
+  			.right-box{
+  				/*background: blue;*/
+  				height: 100%;
+  			}
+  			/*动画-手风琴菜单*/
+  			   ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+       
+        .navlist{
+            width:100%;
+            margin-bottom: 1px solid #cccccc
+        }
+        .navlist ul{
+            /* 隐藏掉ul */
+            display: none;
+        }
+        .navlist h3{
+            /* 因为span标签要绝对定位 */
+            position: relative;
+            /* h3自带一个margin */
+            margin: 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            /* 行高 */
+            line-height: 20px; 
+            /* 字体粗细 */
+            font-weight: normal;
+            color: #fff;
+            background-color: rgb(161, 161, 161);
+            border-top: 1px solid #cccccc;
+            cursor: pointer;
+        }
+        .navlist h3:hover{
+            background-color: rgb(94, 88, 88);
+        }
+        .navlist h3 span{
+            position:absolute;
+            right: 12px;
+            top: 14px;
+            width: 12px;
+            height: 12px;
+            background: url("images/off.jpg")
+
+        }
+        .navlist h3.open span{
+            background: url("images/open.jpg")no-repeat;
+        }
+        .navlist li {
+            display: block;
+            padding: 5px 20px;
+            background-color: #f5f5f5;
+            border: #cccccc;
+            color: #333;
+            border-bottom: none;
+            font-size: 14px;
+        }
+        .navlist li>table>tr:hover{
+            background-color: #cccccc
+        }
+        	#musicImg{
+			width: 150px;
+			height: 150px;
+			margin: auto;
+			animation:imgRotate 8s linear infinite;  /*无限循环*/
+			animation-play-state: paused;
+		}
+		/*旋转关键帧动画*/
+		@keyframes imgRotate{
+			from { transform: rotate(0deg);}
+			to{transform: rotate(360deg);}
+		}
+		#Lyric{margin-top: 5px;
+			height: 250px;
+		}
+      </style>
+   </head>
+   <body>
+    	<!--导航栏-->
+   	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- logo -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="../index.html">Sunlight</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html">首页 <span class="sr-only">(current)</span></a></li>
+        <li><a href="Latest information.html">最新情报</a></li>
+         <li><a href="introduce.html">角色介绍</a></li>
+          <li class="active"><a href="information.html">动画音乐</a></li>
+           <li><a href="activity.html">最新活动</a></li>
+            <li><a href="Contact.html">联系我们</a></li>
+      </ul>
+   <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+             <li><a href="../regs.html">登录</a></li>
+            <li><a href="../logs.html">注册</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">简体中文</a></li>
+            <li><a href="#">日本語</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+ <div class="container" style="margin-top: 51px;">
+ 	<div class="row">
+ 	<div class="left-box col-lg-4 col-md-12 col-sm-12 col-xs-12">
+ 		<div class="navlist">
+        <h3>主题曲<span></span></h3>
+        <ul>
+            <li><table class="table">
+            	<thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle" ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>白痴歌 </td>
+			  		<td>田中真弓 </td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/田中真弓 - 白痴歌.mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>中井和哉,大谷育江,岡村明美 - ウィーアー! ~7人の麦わら海贼団篇~</td>
+			  		<td>中井和哉,大谷育江,岡村明美 </td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/田中真弓,中井和哉,岡村明美 - A THOUSAND DREAMERS ~9人の麦わら海贼団篇~ (BONUS TRACK).mp3" class="glyphicon glyphicon-play-circle" ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/5.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			  </table>
+            </li>
+           
+        </ul>
+           <h3>插曲<span></span></h3>
+        <ul>
+            <li><table class="table">
+            	<thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle" ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>白痴歌 </td>
+			  		<td>田中真弓 </td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/田中真弓 - 白痴歌.mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>中井和哉,大谷育江,岡村明美 - ウィーアー! ~7人の麦わら海贼団篇~</td>
+			  		<td>中井和哉,大谷育江,岡村明美 </td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/田中真弓,中井和哉,岡村明美 - A THOUSAND DREAMERS ~9人の麦わら海贼団篇~ (BONUS TRACK).mp3" class="glyphicon glyphicon-play-circle" ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/5.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			  </table>
+            </li>
+        </ul>
+       <h3>片尾曲<span></span></h3>
+        <ul>
+            <li><table class="table">
+            	<thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle" ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>白痴歌 </td>
+			  		<td>田中真弓 </td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/田中真弓 - 白痴歌.mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>中井和哉,大谷育江,岡村明美 - ウィーアー! ~7人の麦わら海贼団篇~</td>
+			  		<td>中井和哉,大谷育江,岡村明美 </td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/田中真弓,中井和哉,岡村明美 - A THOUSAND DREAMERS ~9人の麦わら海贼団篇~ (BONUS TRACK).mp3" class="glyphicon glyphicon-play-circle" ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/4.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			    <thody>
+			  	<tr>
+			  		<td>布鲁克 - ビンクスの酒 </td>
+			  		<td>布鲁克</td>
+			  		<td>插曲</td>
+			  		<td> <span data-img = "file/img/5.jpg" data-music = "file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" class="glyphicon glyphicon-play-circle " ></span> </td>
+			  	</tr>
+			  </thody>
+			  </table>
+            </li>
+           
+        </ul>
+
+       
+    </div>
+ 	</div>
+ 	<div class="right-box col-lg-8 col-md-12 col-sm-12 col-xs-12">
+ 		<div class="alert alert-danger" role="alert" id="Lyric">
+ 			<!--歌词滚动-->
+					<h3>
+						歌词滚动
+						<img style="width: 25%;" class="img-responsive" src="images/1567157338082.jpg"/>
+					</h3>
+				</div>
+				<div class="alert alert-warning" role="alert">
+ 		<audio id="musicPlayer" src="file/music/布鲁克 - ビンクスの酒 (布鲁克独唱版).mp3" controls="controls" style="width: 100%;"></audio>
+			</div>	
+			<div class="alert alert-danger" role="alert">
+				<img id="musicImg" class="img-circle img-responsive" src="file/img/2.jpg"/>
+			</div>
+ 	</div>
+ </div>
+      <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="lib/bootstrap/otherJs/jquery.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+      <script>
+    $(document).ready(function(){
+        //给h3绑定一个单击事件
+       $(".navlist h3").click(function(){
+           $(this)  //点击当前的h3
+           .toggleClass("open")   //給h3切换一个类
+           .siblings("h3").removeClass("open")
+           .end()//返回$(this)
+           .next("ul").slideToggle("ul")  //紧邻在h3 后面的ul切换
+           .siblings("ul").slideUp("ul")  //其他的ul就不显示
+       })
+    })
+</script>
+<script>
+		$(function(){
+			$("#musicPlayer").on("play",function(){
+				//播放 转动
+			$("#musicImg").css("animation-play-state","running")
+			});
+				$("#musicPlayer").on("pause",function(){
+				//暂停
+				$("#musicImg").css("animation-play-state","paused")
+			});
+			
+			//切歌
+			$(".glyphicon-play-circle").on("click",function(){
+				//获取音乐
+//				console.log($(this))
+				var music = $(this).data("music");
+				var img = $(this).data("img");
+				console.log(music,img)
+				$("#musicPlayer").prop("src",music);
+				$("#musicImg").prop("src",img);
+				//自动播放
+				$("#musicImg").css("animation-play-state","running");
+				$("#musicPlayer")[0].play()
+			})
+		})
+	</script>
+   </body>
+</html>
