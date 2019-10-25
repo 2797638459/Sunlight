@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>One Piece</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 引入 Bootstrap -->
+      <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="css/frozenui.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/base.css" /
+      <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+      <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+      <!--[if lt IE 9]>
+         <script src="lib/bootstrap/otherJs/html5shiv.js"></script>
+         <script src="lib/bootstrap/otherJs/respond.min.js"></script>
+      <![endif]-->
+        </head>	
+     <body>
+     	<div class="c-title">
+	
+	<p class="name">欢迎注册</p>
+</div>
+
+<div class="c-login">
+	<h1>注册</h1>
+	<form class="loginForm">
+		<input type="text" class="userLogo" placeholder="请输入商户名称" lay-verify="required|userName" />
+		<input type="text"  placeholder="请输入手机号码" lay-verify="phone" />
+		<input type="text" class="codeText" placeholder="请输入验证密码" lay-verify="required" />
+		<input type="button" class="codeBtn" value="获取验证码" />
+		<input type="text" class="userLogo" placeholder="请输入邮箱" lay-verify="email" />
+		<input type="password" placeholder="请输入密码" lay-verify="required" />
+		<input type="password" placeholder="请输入确认密码" lay-verify="required" />
+		<input type="button" value="注册" id="regBtn" />
+		<a href="logs.html"><input type="button" value="已有账户"/></a>
+		<a href="index.html"><input type="button" value="回到首页"/></a>
+	</form>
+</div>
+
+     	 <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="lib/bootstrap/otherJs/jquery.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="lib/bootstrap/js/base.js"></script>
+      	<!--js-->
+      	<script type="text/javascript">
+/**
+ * 配置验证须知
+ * 1、要引入jquery.js、base.js、base.css
+ * 2、提交按钮应在<form></form>内部
+ * 3、在要验证的input中写上lay-verify="验证方法名|验证方法名" 可写多个但要用|分隔开
+ * 4、要添加验证方法可在base.js中添加
+ * 5、诺只想引用提示弹出：showTip.success("弹出提示内容");、showTip.fall("弹出提示内容")
+ * 6、base.css中可以自行修改弹窗样式
+ */
+
+$('#regBtn').click(function(){
+	if(!checkInputFunction($('#regBtn'))){
+		return false;
+	}
+	//下面书写验证成功后执行的内容
+});
+</script>
+     </body>
+     </html>
